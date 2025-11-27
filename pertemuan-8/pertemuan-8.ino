@@ -3,6 +3,9 @@
 
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 
+// SCL --> D1
+// SDA --> D2
+
 #define triggerPin D8
 #define echoPin D7
 
