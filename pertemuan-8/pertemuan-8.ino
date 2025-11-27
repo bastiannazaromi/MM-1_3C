@@ -1,5 +1,5 @@
-#define triggerPin 13
-#define echoPin 15
+#define triggerPin D8
+#define echoPin D7
 
 #define pinBuzzer D0
 
