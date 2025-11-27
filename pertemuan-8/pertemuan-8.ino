@@ -1,5 +1,5 @@
-#define triggerPin D8
-#define echoPin D7
+#define triggerPin 13
+#define echoPin 15
 
 #define pinBuzzer D0
 
@@ -30,6 +30,14 @@ void loop() {
   Serial.println("jarak :");
   Serial.print(jarak);
   Serial.println(" cm");
+
+  if (jarak <= 5) {
+    Serial.println("Buzzer berbunyi");
+    digitalWrite(pinBuzzer, HIGH);
+  } else {
+    Serial.println("Buzzer mati");
+    digitalWrite(pinBuzzer, LOW);
+  }
 
   delay(1000);
 }
