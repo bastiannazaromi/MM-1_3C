@@ -1,3 +1,8 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
+
 #define triggerPin D8
 #define echoPin D7
 
@@ -10,6 +15,13 @@ void setup() {
   pinMode(echoPin, INPUT);
 
   pinMode(pinBuzzer, OUTPUT);
+
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+
+  lcd.setCursor(4, 0);
+  lcd.print("KELAS 3C");
 
   Serial.println("Program Sensor Ultrasonik");
 
@@ -30,6 +42,14 @@ void loop() {
   Serial.println("jarak :");
   Serial.print(jarak);
   Serial.println(" cm");
+
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("JARAK : ");
+  lcd.setCursor(0, 8);
+  lcd.print(jarak);
+  lcd.setCursor(0, 13);
+  lcd.print("CM");
 
   if (jarak <= 5) {
     Serial.println("Buzzer berbunyi");
