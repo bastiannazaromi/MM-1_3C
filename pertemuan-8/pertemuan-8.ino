@@ -49,9 +49,9 @@ void loop() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("JARAK : ");
-  lcd.setCursor(0, 8);
+  lcd.setCursor(8, 0);
   lcd.print(jarak);
-  lcd.setCursor(0, 13);
+  lcd.setCursor(13, 0);
   lcd.print("CM");
 
   if (jarak <= 5) {
