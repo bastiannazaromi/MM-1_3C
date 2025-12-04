@@ -3,8 +3,8 @@
 
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 
-// SCL --> D1
-// SDA --> D2
+// SCL --> D15
+// SDA --> D14
 
 #include "DHT.h"
 
