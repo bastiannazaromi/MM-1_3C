@@ -107,4 +107,5 @@ void loop() {
   lcd.print("TEMPELKAN KARTU");
   
   Serial.println();
+  delay(200);
 }
