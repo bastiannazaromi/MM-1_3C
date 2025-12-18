@@ -45,6 +45,8 @@ void setup() {
   lcd.print("TEMPELKAN KARTU");
 
   delay(1000);
+  
+  Serial.println("Tempelkan Kartu");
 }
 
 void loop() {
@@ -70,6 +72,8 @@ void loop() {
   Serial.print("UID: ");
   Serial.println(content.substring(1));
 
+  Serial.println();
+
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("UID :");
@@ -77,8 +81,8 @@ void loop() {
   lcd.print(content.substring(1));
   delay(1500);
 
-  // cek jika UID / ID Kartu = BD 31 15 2B, (silahkan diganti sesuai dengan ID yg terbaca ya...
-  if (content.substring(1) == "BD 31 15 2B") {
+  // cek jika UID / ID Kartu = 73 E6 FF 1A, (silahkan diganti sesuai dengan ID yg terbaca ya...
+  if (content.substring(1) == "73 E6 FF 1A") {
     Serial.println("Akses Diterima");
 
     lcd.clear();
@@ -108,4 +112,6 @@ void loop() {
   
   Serial.println();
   delay(200);
+
+  Serial.println("Tempelkan Kartu");
 }
