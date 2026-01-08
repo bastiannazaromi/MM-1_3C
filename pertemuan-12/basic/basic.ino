@@ -12,13 +12,13 @@ void setup() {
 
 void loop() {
   int sensorStatus = digitalRead(IRSensor);
-  if (sensorStatus == 1)
+  if (sensorStatus == LOW)
   {
-    digitalWrite(LED, LOW);
+    digitalWrite(LED, HIGH);
     Serial.println("Terdeteksi");
   }
   else  {
-    digitalWrite(LED, HIGH);
+    digitalWrite(LED, LOW);
     Serial.println("Tidak ada pergerakan");
   }
 

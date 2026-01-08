@@ -20,7 +20,7 @@ void setup() {
   digitalWrite(LED_MASUK, LOW);
   digitalWrite(LED_KELUAR, LOW);
 
-  Serial.println("SISTEM COUNTER AKTIF");
+  Serial.println("KELAS 3C");
 }
 
 void loop() {
@@ -29,7 +29,7 @@ void loop() {
   if (now - lastCheckMasuk >= interval) {
     lastCheckMasuk = now;
 
-    if (digitalRead(IR_MASUK) == HIGH) {
+    if (digitalRead(IR_MASUK) == LOW) {
       digitalWrite(LED_MASUK, HIGH);
       Serial.println("Orang MASUK");
     } else {
@@ -40,7 +40,7 @@ void loop() {
   if (now - lastCheckKeluar >= interval) {
     lastCheckKeluar = now;
 
-    if (digitalRead(IR_KELUAR) == HIGH) {
+    if (digitalRead(IR_KELUAR) == LOW) {
       digitalWrite(LED_KELUAR, HIGH);
       Serial.println("Orang KELUAR");
     } else {
