@@ -6,7 +6,7 @@
 
 unsigned long lastCheckMasuk = 0;
 unsigned long lastCheckKeluar = 0;
-const unsigned long interval = 50;
+const unsigned long interval = 100;
 
 int jumlahOrang = 0;
 
@@ -33,7 +33,7 @@ void loop() {
 
     int currentMasuk = digitalRead(IR_MASUK);
 
-    if (currentMasuk == HIGH && lastMasukState == LOW) {
+    if (currentMasuk == LOW && lastMasukState == HIGH) {
       jumlahOrang++;
       Serial.print("MASUK | Jumlah orang: ");
       Serial.println(jumlahOrang);
@@ -48,8 +48,11 @@ void loop() {
 
     int currentKeluar = digitalRead(IR_KELUAR);
 
-    if (currentKeluar == HIGH && lastKeluarState == LOW) {
-      if (jumlahOrang > 0) jumlahOrang--;
+    if (currentKeluar == LOW && lastKeluarState == HIGH) {
+      if (jumlahOrang > 0) 
+      {
+        jumlahOrang--;
+      }
       Serial.print("KELUAR | Jumlah orang: ");
       Serial.println(jumlahOrang);
     }

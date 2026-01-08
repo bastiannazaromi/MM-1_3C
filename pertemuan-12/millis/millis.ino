@@ -7,6 +7,7 @@
 unsigned long lastCheckMasuk = 0;
 unsigned long lastCheckKeluar = 0;
 const unsigned long interval = 100;
+const unsigned long interval_keluar = 500;
 
 void setup() {
   Serial.begin(9600);
@@ -37,7 +38,7 @@ void loop() {
     }
   }
 
-  if (now - lastCheckKeluar >= interval) {
+  if (now - lastCheckKeluar >= interval_keluar) {
     lastCheckKeluar = now;
 
     if (digitalRead(IR_KELUAR) == LOW) {
