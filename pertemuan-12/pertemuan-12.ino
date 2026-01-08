@@ -9,6 +9,7 @@ unsigned long lastCheckKeluar = 0;
 const unsigned long interval = 100;
 
 int jumlahOrang = 0;
+int slot = 10;
 
 int lastMasukState = HIGH;
 int lastKeluarState = HIGH;
@@ -34,9 +35,14 @@ void loop() {
     int currentMasuk = digitalRead(IR_MASUK);
 
     if (currentMasuk == LOW && lastMasukState == HIGH) {
-      jumlahOrang++;
-      Serial.print("MASUK | Jumlah orang: ");
-      Serial.println(jumlahOrang);
+      if (jumlahOrang < slot) {
+        jumlahOrang++;
+
+        Serial.print("MASUK | Jumlah orang: ");
+        Serial.println(jumlahOrang);
+      } else {
+        Serial.println("PENUH!");
+      }
     }
 
     digitalWrite(LED_MASUK, !currentMasuk);
