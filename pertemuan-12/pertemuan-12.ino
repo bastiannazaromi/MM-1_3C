@@ -10,8 +10,8 @@ const unsigned long interval = 100;
 
 int jumlahOrang = 0;
 
-int lastMasukState = LOW;
-int lastKeluarState = LOW;
+int lastMasukState = HIGH;
+int lastKeluarState = HIGH;
 
 void setup() {
   Serial.begin(9600);
