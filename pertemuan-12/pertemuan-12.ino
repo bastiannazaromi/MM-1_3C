@@ -39,7 +39,7 @@ void loop() {
       Serial.println(jumlahOrang);
     }
 
-    digitalWrite(LED_MASUK, currentMasuk);
+    digitalWrite(LED_MASUK, !currentMasuk);
     lastMasukState = currentMasuk;
   }
 
@@ -57,7 +57,7 @@ void loop() {
       Serial.println(jumlahOrang);
     }
 
-    digitalWrite(LED_KELUAR, currentKeluar);
+    digitalWrite(LED_KELUAR, !currentKeluar);
     lastKeluarState = currentKeluar;
   }
 }
