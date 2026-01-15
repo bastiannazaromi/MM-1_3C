@@ -3,12 +3,12 @@
 #include <UniversalTelegramBot.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "NAMA_WIFI";
-const char* password = "PASSWORD_WIFI";
+const char* ssid = "LAB Hardware 2";
+const char* password = "harkatnegeri";
 
-#define BOT_TOKEN "ISI_BOT_TOKEN"
-#define CHAT_ID   "ISI_CHAT_ID"
-j
+#define BOT_TOKEN "7731595619:AAFCCUokLsPsrdR-7jhS2_cQWYFSLmHOrWc"
+#define CHAT_ID   "1028996259"
+
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOT_TOKEN, client);
 
@@ -50,4 +50,6 @@ void loop() {
       serialMessage += c;
     }
   }
+
+  
 }

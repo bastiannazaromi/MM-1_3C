@@ -3,17 +3,17 @@
 #include <UniversalTelegramBot.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "NAMA_WIFI";
-const char* password = "PASSWORD_WIFI";
+const char* ssid = "LAB Hardware 2";
+const char* password = "harkatnegeri";
 
-#define BOT_TOKEN "ISI_BOT_TOKEN"
-#define CHAT_ID   "ISI_CHAT_ID"
+#define BOT_TOKEN "7731595619:AAFCCUokLsPsrdR-7jhS2_cQWYFSLmHOrWc"
+#define CHAT_ID   "1028996259"
 
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOT_TOKEN, client);
 
 unsigned long lastTimeBotRan;
-const unsigned long botRequestDelay = 2000;
+const unsigned long botRequestDelay = 500;
 
 void handleNewMessages(int numNewMessages) {
   Serial.println("Pesan baru diterima");
